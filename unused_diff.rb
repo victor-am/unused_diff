@@ -12,7 +12,8 @@ BRANCH_UNUSED_PATH = '../unused.branch'.freeze
 #
 # Requirements:
 # -------------
-# - unused (brew install unused)
+# - unused (brew tap joshuaclayton/formulae && brew install unused)
+# - ctags  (brew install ctags)
 #
 # How to use:
 # -----------
