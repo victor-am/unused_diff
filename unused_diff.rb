@@ -32,14 +32,14 @@ unless %w[--skip-master].include?(ARGV[0])
   File.delete(MASTER_UNUSED_PATH) if File.exist?(MASTER_UNUSED_PATH)
   system 'git checkout master'
   puts 'Analyzing master unused code...'
-  system "git ls-files | xargs ctags -f tmp/tags && cat tmp/tags | unused -s -g none --stdin -C > #{MASTER_UNUSED_PATH}"
+  system "git ls-files | grep .rb | xargs ctags -f tmp/tags && cat tmp/tags | unused -s -g none --stdin -C > #{MASTER_UNUSED_PATH}"
 end
 
 unless %w[--skip-branch].include?(ARGV[0])
   File.delete(BRANCH_UNUSED_PATH) if File.exist?(BRANCH_UNUSED_PATH)
   system 'git checkout -'
   puts 'Analyzing branch unused code...'
-  system "git ls-files | xargs ctags -f tmp/tags && cat tmp/tags | unused -s -g none --stdin -C > #{BRANCH_UNUSED_PATH}"
+  system "git ls-files | grep .rb | xargs ctags -f tmp/tags && cat tmp/tags | unused -s -g none --stdin -C > #{BRANCH_UNUSED_PATH}"
 end
 
 def clean_output(file_content)
