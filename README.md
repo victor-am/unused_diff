@@ -2,7 +2,7 @@
 
 This small script runs the unused library on both master and your current branch comparing the results and showing only the unused code introduced by the current branch.
 
-But it's kinda slow (full run takes ~17min in my machine) and CPU intensive :/
+But it's kinda slow on and CPU intensive :/
 
 ## Requirements:
 - unused (brew tap joshuaclayton/formulae && brew install unused)
